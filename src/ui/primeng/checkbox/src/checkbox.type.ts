@@ -11,9 +11,10 @@ export interface FormlyCheckboxFieldConfig extends FormlyFieldConfig<CheckboxPro
 @Component({
   selector: 'formly-field-primeng-checkbox',
   template: `
-    <div class="p-field-checkbox">
-      <p-checkbox [binary]="true" [label]="props.label" [formControl]="formControl" [formlyAttributes]="field">
+    <div class="p-field-checkbox flex items-center">
+      <p-checkbox [binary]="true" [inputId]="props.label" [formControl]="formControl" [formlyAttributes]="field">
       </p-checkbox>
+      <label [for]="props.label" class="ml-2">{{ props.label }}</label>
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
